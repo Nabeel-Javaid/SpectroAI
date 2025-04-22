@@ -23,9 +23,9 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
     }, []);
 
     return (
-        <div className={`relative rounded-lg bg-primary-dark/80 p-4 font-mono text-sm md:text-base overflow-hidden ${className}`}>
+        <div className={`relative rounded-lg bg-[#0a0e17] p-8 font-mono text-base md:text-lg overflow-hidden shadow-xl ${className}`}>
             {/* Terminal scan line effect */}
-            <div className="scan-line absolute inset-0 opacity-10"></div>
+            <div className="scan-line absolute inset-0 opacity-5"></div>
 
             {/* Glitch effect overlay */}
             {isGlitching && (
@@ -36,48 +36,74 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
                 />
             )}
 
-            {/* Line numbers */}
-            <div className="absolute left-2 top-4 bottom-4 w-6 text-text-muted/50 text-xs flex flex-col justify-between">
-                {[...Array(10)].map((_, i) => (
-                    <div key={i} className="flex justify-end">{i + 1}</div>
-                ))}
+            {/* Code content area */}
+            <div className="relative z-10 mb-14">
+                {/* Line numbers */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 text-gray-500 text-sm flex flex-col space-y-10 pt-1">
+                    {/* {[...Array(6)].map((_, i) => (
+                        <div key={i} className="flex justify-end">{i + 1}</div>
+                    ))} */}
+                </div>
+
+                <div className="pl-10 font-medium">
+                    <Typewriter
+                        options={{
+                            strings: [
+                                '<span class="comment">// Initialize Interview Coder</span>\n\n<span class="code-keyword">const</span> <span class="code-variable">interviewCoder</span> = <span class="code-keyword">new</span> <span class="code-function">AIAssistant</span>();\n\n<span class="comment">// Take screenshot</span>\n<span class="code-keyword">const</span> <span class="code-variable">problem</span> = <span class="code-keyword">await</span> <span class="code-variable">interviewCoder</span>.<span class="code-function">captureScreen</span>();\n\n<span class="comment">// Process with AI</span>\n<span class="code-keyword">const</span> <span class="code-variable">solution</span> = <span class="code-keyword">await</span> <span class="code-variable">interviewCoder</span>.<span class="code-function">analyze</span>(<span class="code-variable">problem</span>);',
+                            ],
+                            autoStart: true,
+                            loop: true,
+                            delay: 80,
+                            deleteSpeed: 30,
+                            wrapperClassName: 'code-text',
+                            cursorClassName: 'cyber-cursor',
+                        }}
+                    />
+                </div>
             </div>
 
-            <div className="pl-8 text-cyber-blue">
-                <Typewriter
-                    options={{
-                        strings: [
-                            '// Initialize Interview Coder\nconst interviewCoder = new AIAssistant();\n\n// Take screenshot of problem\nconst problem = await interviewCoder.captureScreen();\n\n// Process with selected AI model\nconst solution = await interviewCoder.analyze(problem, {\n  model: "gpt-4o" // or "gemini-pro" or "claude-3"\n});\n\n// Display solution while remaining invisible\nconsole.log("Interview passing: 100% probability");',
-                        ],
-                        autoStart: true,
-                        loop: true,
-                        delay: 40,
-                        deleteSpeed: 20,
-                        wrapperClassName: 'code-text',
-                        cursorClassName: 'cyber-cursor',
-                    }}
-                />
+            {/* System status display */}
+            <br />
+
+            <div className="absolute bottom-4 left-4 right-4 bg-black/50 text-cyber-blue text-sm px-4 py-3 rounded-md border border-cyber-blue/30 font-mono">
+                <div className="flex items-center space-x-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-neo-green animate-pulse"></span>
+
+                    <span className="text-neo-green">SYSTEM_ACTIVE</span>
+                </div>
+                <div className="mt-1 text-[#a8d0fc]">INTERFACE_VERSION: 2.3.7</div>
+                <div className="mt-1 text-[#a8d0fc]">STATUS: ONLINE</div>
             </div>
 
             {/* Pulsing cursor */}
             <style jsx global>{`
                 .cyber-cursor {
-                    color: var(--cyberpunk-blue);
+                    color: #00ccff;
                     animation: blink 1s infinite;
                 }
                 
-                .code-text span {
-                    color: var(--cyberpunk-blue);
+                .code-text {
+                    font-weight: 500;
+                    line-height: 2.5;
                 }
                 
-                .code-text span:nth-child(7n+1),
-                .code-text span:nth-child(7n+2) {
-                    color: var(--cyberpunk-purple);
+                .comment {
+                    color: #7d9c7d;
+                    font-style: italic;
                 }
                 
-                .code-text span:nth-child(5n),
-                .code-text span:nth-child(5n+1) {
-                    color: var(--neo-green);
+                .code-keyword {
+                    color: #c77dff;
+                    font-weight: 600;
+                }
+                
+                .code-variable {
+                    color: #00ccff;
+                }
+                
+                .code-function {
+                    color: #00ff9d;
+                    font-weight: 600;
                 }
                 
                 @keyframes blink {
@@ -86,20 +112,13 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
                 }
             `}</style>
 
-            {/* Decorated corners */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyber-blue/70"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyber-blue/70"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyber-blue/70"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyber-blue/70"></div>
+            {/* Decorated corners - only top ones */}
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyber-blue/70"></div>
+            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyber-blue/70"></div>
 
             {/* Status indicators */}
             <motion.div
-                className="absolute top-1 right-6 h-1 w-1 rounded-full bg-neo-green"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-            />
-            <motion.div
-                className="absolute top-1 right-10 h-1 w-1 rounded-full bg-cyber-purple"
+                className="absolute top-3 right-10 h-2 w-2 rounded-full bg-cyber-purple"
                 animate={{ opacity: [0.3, 0.8, 0.3] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
             />

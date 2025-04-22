@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 
             {/* Main footer content */}
             <div className="container mx-auto px-4 py-16 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {/* Logo and about section */}
                     <div className="space-y-6">
                         <motion.div
@@ -211,116 +211,32 @@ const Footer: React.FC = () => {
                             ))}
                         </ul>
                     </motion.div>
-
-                    {/* Newsletter */}
-                    <motion.div
-                        className="space-y-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                    >
-                        <h3 className="text-lg font-semibold text-white">Stay Updated</h3>
-                        <p className="text-text-muted text-sm">Subscribe to our newsletter for updates.</p>
-
-                        <form className="relative">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="w-full bg-primary-light/20 border border-white/10 rounded-lg py-3 px-4 text-white placeholder-text-muted/70 outline-none focus:border-cyber-blue/50 transition-colors"
-                            />
-                            <motion.button
-                                type="submit"
-                                className="absolute right-1.5 top-1.5 bg-gradient-to-r from-cyber-blue to-cyber-purple text-white rounded-md py-1.5 px-3 text-sm font-medium"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Subscribe
-                            </motion.button>
-
-                            {/* Focused input glow effect */}
-                            <motion.div
-                                className="absolute -inset-0.5 rounded-lg bg-cyber-blue opacity-0 focus-within:opacity-20 blur-sm pointer-events-none transition-opacity"
-                            />
-                        </form>
-
-                        {/* Compliance text */}
-                        <p className="text-text-muted/80 text-xs">
-                            By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
-                        </p>
-                    </motion.div>
                 </div>
 
-                {/* Bottom credits */}
-                <motion.div
-                    className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                    <p className="text-text-muted/70 text-sm mb-4 md:mb-0">
-                        © {new Date().getFullYear()} Interview Coder. All rights reserved.
-                    </p>
-
-                    <div className="relative">
+                {/* Bottom copyright */}
+                <div className="mt-16 pt-8 border-t border-white/5">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <motion.p
-                            className="text-xs text-text-muted/70 flex items-center"
-                            whileHover={{ color: "rgba(255, 255, 255, 0.8)" }}
+                            className="text-text-muted text-sm"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            <span className="flex items-center">
-                                Built with
-                                <motion.svg
-                                    className="w-4 h-4 mx-1 text-cyber-pink"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    animate={{
-                                        scale: [1, 1.2, 1],
-                                        rotate: [0, 5, -5, 0],
-                                    }}
-                                    transition={{
-                                        duration: 1.5,
-                                        repeat: Infinity,
-                                        repeatType: "reverse"
-                                    }}
-                                >
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                </motion.svg>
-                                in
-                                <motion.span
-                                    className="bg-clip-text text-transparent bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink ml-1 font-medium"
-                                    animate={{
-                                        backgroundPosition: ["0% center", "100% center", "0% center"],
-                                    }}
-                                    transition={{
-                                        duration: 5,
-                                        repeat: Infinity,
-                                        ease: "linear"
-                                    }}
-                                    style={{
-                                        backgroundSize: "200% auto",
-                                    }}
-                                >
-                                    React & Next.js
-                                </motion.span>
-                            </span>
+                            &copy; {new Date().getFullYear()} Interview Coder. All rights reserved.
                         </motion.p>
-                        {/* Underline animation */}
+
                         <motion.div
-                            className="absolute -bottom-1 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyber-purple/50 to-transparent"
-                            animate={{
-                                opacity: [0.2, 0.5, 0.2],
-                                backgroundPosition: ["0% center", "100% center", "0% center"],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "linear",
-                            }}
-                            style={{
-                                backgroundSize: "200% auto",
-                            }}
-                        />
+                            className="flex items-center space-x-2 text-text-muted text-sm"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.7 }}
+                        >
+                            <span className="code-font text-cyber-blue">v2.3.7</span>
+                            <span>&bull;</span>
+                            <span>Made with ❤️ by devs for devs</span>
+                        </motion.div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </footer>
     );

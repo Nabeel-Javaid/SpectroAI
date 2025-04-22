@@ -80,7 +80,6 @@ Step.displayName = 'Step';
 const HowItWorksSection: React.FC = () => {
     const [activeStep, setActiveStep] = useState(1);
     const { scrollYProgress } = useScroll();
-    const opacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
 
     // Auto-advance steps with the possibility to disable
     const [autoAdvance, setAutoAdvance] = useState(true);
@@ -142,7 +141,6 @@ const HowItWorksSection: React.FC = () => {
                 <AnimatedSection className="text-center mb-16">
                     <motion.h2
                         className="text-3xl md:text-4xl font-bold mb-2 relative inline-block"
-                        style={{ opacity }}
                     >
                         <span className="text-cyber-purple neon-text">How It</span>{' '}
                         <span className="text-white">Works</span>

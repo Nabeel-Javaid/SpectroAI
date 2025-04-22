@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import Button from './Button';
-import { FaWindows, FaApple, FaGithub, FaCode } from 'react-icons/fa';
+import { FaWindows, FaApple } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const DownloadSection: React.FC = () => {
@@ -19,7 +19,7 @@ const DownloadSection: React.FC = () => {
                     </p>
                 </AnimatedSection>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <AnimatedSection delay={0.1} className="col-span-1">
                         <div className="glassmorphism rounded-lg p-6 h-full border border-white/10 flex flex-col">
                             <div className="text-4xl text-accent mb-4 flex justify-center">
@@ -52,26 +52,6 @@ const DownloadSection: React.FC = () => {
                                 className="w-full justify-center"
                             >
                                 Download for macOS
-                            </Button>
-                        </div>
-                    </AnimatedSection>
-
-                    <AnimatedSection delay={0.3} className="col-span-1">
-                        <div className="glassmorphism rounded-lg p-6 h-full border border-white/10 flex flex-col">
-                            <div className="text-4xl text-accent mb-4 flex justify-center">
-                                <FaCode />
-                            </div>
-                            <h3 className="text-xl font-bold mb-2 text-center">From Source</h3>
-                            <p className="text-text-muted mb-6 flex-grow text-center">
-                                Clone the repository and build from source for full customization.
-                            </p>
-                            <Button
-                                href="https://github.com/greeneu/interview-coder-withoupaywall-opensource"
-                                variant="outline"
-                                className="w-full justify-center gap-2"
-                            >
-                                <FaGithub className="mr-1" />
-                                View on GitHub
                             </Button>
                         </div>
                     </AnimatedSection>

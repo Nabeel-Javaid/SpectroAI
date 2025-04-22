@@ -124,7 +124,7 @@ const HolographicInterface = () => {
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="border border-cyber-blue/30 p-2 bg-primary-dark/50 rounded">
+                    {/* <div className="border border-cyber-blue/30 p-2 bg-primary-dark/50 rounded">
                         <motion.div
                             animate={{ opacity: [0.7, 1, 0.7] }}
                             transition={{ duration: 2, repeat: Infinity }}
@@ -137,7 +137,7 @@ const HolographicInterface = () => {
                                 <span className="block">{`> STATUS: ONLINE`}</span>
                             </div>
                         </motion.div>
-                    </div>
+                    </div> */}
                 </motion.div>
             )}
         </AnimatePresence>
@@ -571,25 +571,6 @@ def prepare_for_interview():
                                 }}
                             />
                         </motion.div>
-
-                        {/* Status indicators */}
-                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
-                            {[...Array(3)].map((_, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="w-1 h-1 rounded-full bg-cyber-blue"
-                                    animate={{
-                                        opacity: [0.3, 1, 0.3],
-                                        scale: [1, 1.2, 1],
-                                    }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        delay: i * 0.3,
-                                    }}
-                                />
-                            ))}
-                        </div>
                     </motion.div>
                 </div>
             </div>

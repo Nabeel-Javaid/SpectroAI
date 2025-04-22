@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { FaGithub, FaDownload, FaBars, FaTimes, FaStar } from 'react-icons/fa';
+import { FaDownload, FaBars, FaTimes, FaStar } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -41,8 +41,8 @@ const Navbar: React.FC = () => {
         <>
             <motion.nav
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                        ? 'bg-primary-dark/80 backdrop-blur-md py-3 shadow-lg border-b border-cyber-blue/20'
-                        : 'bg-transparent py-5'
+                    ? 'bg-primary-dark/80 backdrop-blur-md py-3 shadow-lg border-b border-cyber-blue/20'
+                    : 'bg-transparent py-5'
                     }`}
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
@@ -104,14 +104,6 @@ const Navbar: React.FC = () => {
                     {/* Action Buttons */}
                     <div className="hidden md:flex items-center space-x-3">
                         <Button
-                            variant="cyberpunk"
-                            size="sm"
-                            href="https://github.com/greeneu/interview-coder-withoupaywall-opensource"
-                            icon={<FaGithub />}
-                        >
-                            GitHub
-                        </Button>
-                        <Button
                             variant="neon"
                             size="sm"
                             href="#download"
@@ -153,13 +145,6 @@ const Navbar: React.FC = () => {
 
                             <div className="pt-6 flex flex-col gap-4 w-full max-w-xs">
                                 <Button
-                                    variant="cyberpunk"
-                                    href="https://github.com/greeneu/interview-coder-withoupaywall-opensource"
-                                    icon={<FaGithub />}
-                                >
-                                    View on GitHub
-                                </Button>
-                                <Button
                                     variant="neon"
                                     href="#download"
                                     icon={<FaDownload />}
@@ -168,16 +153,6 @@ const Navbar: React.FC = () => {
                                     Download Now
                                 </Button>
                             </div>
-
-                            {/* GitHub stars */}
-                            <motion.div
-                                className="mt-8 flex items-center text-text-muted text-sm"
-                                animate={{ y: [0, 5, 0] }}
-                                transition={{ duration: 4, repeat: Infinity }}
-                            >
-                                <FaStar className="text-cyber-yellow text-lg mr-2" />
-                                <span>Star us on GitHub!</span>
-                            </motion.div>
                         </div>
                     </motion.div>
                 )}
