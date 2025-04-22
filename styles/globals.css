@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 8, 8, 28;
+    --background-end-rgb: 15, 23, 42;
+    --accent-glow: 0 0 20px rgba(99, 102, 241, 0.6);
+    --accent-neon: 0 0 15px #4F46E5, 0 0 30px rgba(79, 70, 229, 0.5);
+    --cyberpunk-blue: #0ff;
+    --cyberpunk-purple: #9d4edd;
+    --neo-green: #00ff9d;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(135deg,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-end-rgb)));
+    min-height: 100vh;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Cyberpunk grid background */
+.cyberpunk-grid {
+    background-image:
+        linear-gradient(rgba(26, 32, 69, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 32, 69, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+}
+
+.hero-gradient {
+    background: linear-gradient(-45deg,
+            rgba(10, 10, 36, 0.8),
+            rgba(15, 23, 42, 0.9),
+            rgba(79, 70, 229, 0.6),
+            rgba(10, 10, 36, 0.7));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.glassmorphism {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.glassmorphism::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(99, 102, 241, 0.1),
+            transparent);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.glassmorphism:hover::before {
+    left: 100%;
+    transition: 0.8s;
+}
+
+.neon-text {
+    text-shadow: 0 0 5px var(--cyberpunk-blue), 0 0 10px var(--cyberpunk-blue);
+    animation: pulse 2s infinite alternate;
+}
+
+.neon-border {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5), inset 0 0 5px rgba(99, 102, 241, 0.2);
+}
+
+.neon-glow {
+    box-shadow: var(--accent-glow);
+}
+
+.neon-accent {
+    text-shadow: var(--accent-neon);
+}
+
+.neo-green {
+    color: var(--neo-green);
+}
+
+.cyberpunk-blue {
+    color: var(--cyberpunk-blue);
+}
+
+.cyberpunk-purple {
+    color: var(--cyberpunk-purple);
+}
+
+.code-font {
+    font-family: 'Fira Code', monospace;
+}
+
+.holographic-glare {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            transparent 10%,
+            rgba(255, 255, 255, 0.08) 45%,
+            rgba(255, 255, 255, 0.08) 55%,
+            transparent 90%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.glassmorphism:hover .holographic-glare {
+    opacity: 1;
+    animation: holographic-shift 1.5s ease-in-out;
+}
+
+.future-card {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.future-card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(99, 102, 241, 0.2) 30%,
+            rgba(99, 102, 241, 0.3) 50%,
+            transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    z-index: -1;
+}
+
+.future-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.future-card:hover::before {
+    transform: translateX(100%);
+}
+
+.progress-gradient {
+    background: linear-gradient(270deg, var(--cyberpunk-blue), var(--cyberpunk-purple), var(--neo-green));
+    background-size: 600% 600%;
+    animation: progress-animation 4s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes holographic-shift {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes progress-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(1000px) rotateY(10deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+@keyframes border-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate3d {
+    animation: rotate3d 8s ease-in-out infinite;
+}
+
+.animate-border-flow {
+    background: linear-gradient(90deg, var(--cyberpunk-blue), var(--neo-green), var(--cyberpunk-purple), var(--cyberpunk-blue));
+    background-size: 300% 100%;
+    animation: border-flow 5s ease infinite;
+}
+
+.retro-line {
+    position: relative;
+}
+
+.retro-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyberpunk-blue), transparent);
+}
+
+/* Cyberpunk/futuristic button */
+.future-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.future-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.future-button:hover::before {
+    transform: translateX(100%);
+}
+
+.future-button:hover {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+/* More keyframes */
+@keyframes scan-line {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(99, 102, 241, 0.2),
+            transparent);
+    animation: scan-line 2s linear infinite;
+}
