@@ -332,7 +332,7 @@ def prepare_for_interview():
         }
     };
 
-    const titleChars = "Interview Coder AI".split("");
+    const titleChars = "Spectro AI".split("");
 
     return (
         <motion.section

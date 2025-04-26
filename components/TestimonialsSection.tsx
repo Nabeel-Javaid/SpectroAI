@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
         position: "Senior Software Engineer",
         company: "TechVision Inc.",
         avatar: "/testimonials/avatar-1.png",
-        content: "Interview Coder AI has completely transformed my interview preparation. The real-time coding assistance and detailed explanations helped me land my dream job at a top tech company.",
+        content: "Spectro AI has completely transformed my interview preparation. The real-time coding assistance and detailed explanations helped me land my dream job at a top tech company.",
         rating: 5,
         accentColor: "from-cyber-blue to-cyber-purple"
     },
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
         position: "Backend Engineer",
         company: "DataFlow Systems",
         avatar: "/testimonials/avatar-3.png",
-        content: "As someone transitioning into tech from another field, Interview Coder AI has been invaluable. It's like having a patient mentor available 24/7 to guide you through complex coding challenges.",
+        content: "As someone transitioning into tech from another field, Spectro AI has been invaluable. It's like having a patient mentor available 24/7 to guide you through complex coding challenges.",
         rating: 5,
         accentColor: "from-cyber-green to-cyber-blue"
     }

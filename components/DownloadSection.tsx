@@ -12,10 +12,10 @@ const DownloadSection: React.FC = () => {
             <div className="container mx-auto px-4">
                 <AnimatedSection className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        <span className="text-accent">Download</span> Interview Coder
+                        <span className="text-accent">Download</span> Spectro
                     </h2>
                     <p className="text-text-muted text-lg max-w-2xl mx-auto">
-                        Get started with Interview Coder today. It's free, open-source, and runs on your local machine.
+                        Get started with Spectro today. It's free, open-source, and runs on your local machine.
                     </p>
                 </AnimatedSection>
 

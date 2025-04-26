@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <title>Interview Coder - AI Assistant for Technical Interviews</title>
+                <title>Spectro - AI Assistant for Technical Interviews</title>
                 <meta name="description" content="Ace your technical interviews with our AI-powered solution that stays invisible while giving you real-time assistance." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />

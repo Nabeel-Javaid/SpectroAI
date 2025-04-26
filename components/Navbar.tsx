@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                             }}
                             transition={{ duration: 2, repeat: Infinity }}
                         >
-                            Interview
+                            Spectro
                         </motion.span>
                         <motion.span
                             className="text-white font-bold text-xl"
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                             }}
                             transition={{ duration: 2, repeat: Infinity }}
                         >
-                            Coder
+                            Ai
                         </motion.span>
 
                         {/* Decorative circuit line underneath logo */}
@@ -89,7 +89,6 @@ const Navbar: React.FC = () => {
                             animate={{ opacity: [0.5, 0.8, 0.5] }}
                             transition={{ duration: 3, repeat: Infinity }}
                         >
-                            v2.3.7
                         </motion.div>
                     </motion.div>
 

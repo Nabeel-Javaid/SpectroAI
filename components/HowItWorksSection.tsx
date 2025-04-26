@@ -105,7 +105,7 @@ const HowItWorksSection: React.FC = () => {
         {
             number: 1,
             title: "Install and Run",
-            description: "Download, install, and launch Interview Coder with your preferred AI model API key.",
+            description: "Download, install, and launch Spectro with your preferred AI model API key.",
             image: "https://placehold.co/600x340/0f172a/0ff.webp?text=Install+and+Run&font=Space+Grotesk"
         },
         {
@@ -147,7 +147,7 @@ const HowItWorksSection: React.FC = () => {
                     </motion.h2>
 
                     <p className="text-text-muted text-lg max-w-2xl mx-auto mt-6">
-                        Interview Coder works in a few simple steps to help you ace coding challenges.
+                        Spectro works in a few simple steps to help you ace coding challenges.
                     </p>
                 </AnimatedSection>
 

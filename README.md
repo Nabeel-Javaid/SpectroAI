@@ -1,6 +1,6 @@
-# Interview Coder Landing Page
+# Spectro Landing Page
 
-A modern, animated landing page for the Interview Coder project built with Next.js and Tailwind CSS.
+A modern, animated landing page for the Spectro project built with Next.js and Tailwind CSS.
 
 ## Features
 

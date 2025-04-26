@@ -26,7 +26,7 @@ const ComparisonSection: React.FC = () => {
                         <span className="text-accent">Compare</span> with Paid Alternatives
                     </h2>
                     <p className="text-text-muted text-lg max-w-2xl mx-auto">
-                        See how Interview Coder stacks up against premium interview preparation tools that cost $60+ per month.
+                        See how Spectro stacks up against premium interview preparation tools that cost $60+ per month.
                     </p>
                 </AnimatedSection>
 
@@ -37,7 +37,7 @@ const ComparisonSection: React.FC = () => {
                                 <tr>
                                     <th className="py-4 px-6">Feature</th>
                                     <th className="py-4 px-6">Premium Tools (Paid)</th>
-                                    <th className="py-4 px-6 bg-accent/10">Interview Coder (Free)</th>
+                                    <th className="py-4 px-6 bg-accent/10">Spectro (Free)</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/10">
@@ -75,9 +75,9 @@ const ComparisonSection: React.FC = () => {
 
                 <AnimatedSection delay={0.4} className="mt-12 text-center">
                     <div className="glassmorphism max-w-3xl mx-auto p-8 rounded-lg">
-                        <h3 className="text-2xl font-bold mb-4">Why Choose Interview Coder?</h3>
+                        <h3 className="text-2xl font-bold mb-4">Why Choose Spectro?</h3>
                         <p className="text-text-muted mb-4">
-                            Interview Coder provides the same powerful functionality as expensive interview preparation tools,
+                            Spectro provides the same powerful functionality as expensive interview preparation tools,
                             but as a free, open-source alternative. You get complete control over your experience and only pay
                             for what you use with your own API key.
                         </p>

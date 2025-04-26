@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                                     transition={{ duration: 2, repeat: Infinity }}
                                 />
                             </div>
-                            <span className="text-xl font-bold text-white">Interview Coder</span>
+                            <span className="text-xl font-bold text-white">Spectro</span>
                         </motion.div>
 
                         <motion.p
@@ -222,7 +222,7 @@ const Footer: React.FC = () => {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            &copy; {new Date().getFullYear()} Interview Coder. All rights reserved.
+                            &copy; {new Date().getFullYear()} Spectro. All rights reserved.
                         </motion.p>
 
                         <motion.div
