@@ -5,6 +5,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import ComparisonSection from '../components/ComparisonSection';
 import DownloadSection from '../components/DownloadSection';
+import FAQSection from '../components/FAQSection';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 
@@ -34,6 +35,7 @@ export default function Home() {
             <HowItWorksSection />
             <ComparisonSection />
             <DownloadSection />
+            <FAQSection />
             <Footer />
         </div>
     );
