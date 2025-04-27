@@ -483,28 +483,28 @@ def prepare_for_interview():
                         </motion.div>
 
                         {/* Features tags */}
-                        <motion.div
+                        {/* <motion.div
                             className="flex flex-wrap gap-3 justify-center lg:justify-start"
                             variants={itemVariants}
                         >
-                            {['100% Free', 'Open Source', 'Multiple AI Models', 'Undetectable'].map((tag, index) => (
-                                <motion.div
-                                    key={tag}
-                                    className="px-3 py-1 rounded-full text-sm border border-white/10 bg-primary-light/20 backdrop-blur-sm text-text-muted"
-                                    whileHover={{
-                                        scale: 1.05,
-                                        boxShadow: "0 0 10px rgba(99, 102, 241, 0.3)",
-                                        borderColor: "rgba(255, 255, 255, 0.3)",
-                                        y: -2
-                                    }}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 + (index * 0.1) }}
-                                >
-                                    {tag}
-                                </motion.div>
+                            {['Cheap Alternative', , 'Latest AI Models', 'Undetectable'].map((tag, index) => (
+                                // <motion.div
+                                //     key={tag}
+                                //     className="px-3 py-1 rounded-full text-sm border border-white/10 bg-primary-light/20 backdrop-blur-sm text-text-muted"
+                                //     whileHover={{
+                                //         scale: 1.05,
+                                //         boxShadow: "0 0 10px rgba(99, 102, 241, 0.3)",
+                                //         borderColor: "rgba(255, 255, 255, 0.3)",
+                                //         y: -2
+                                //     }}
+                                //     initial={{ opacity: 0, y: 10 }}
+                                //     animate={{ opacity: 1, y: 0 }}
+                                //     transition={{ delay: 0.5 + (index * 0.1) }}
+                                // >
+                                //     {tag}
+                                // </motion.div>
                             ))}
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
 
                     {/* Hero image */}

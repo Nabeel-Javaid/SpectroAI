@@ -4,17 +4,23 @@ import { FaCheck, FaTimes } from 'react-icons/fa';
 
 const ComparisonSection: React.FC = () => {
     const features = [
-        { name: 'Price', premium: '$60/month subscription', free: 'Free (only pay for your API usage)' },
+        { name: 'Price', premium: '$60/month subscription', free: '$10/month subscription' },
         { name: 'Solution Generation', premium: true, free: true },
         { name: 'Debugging Assistance', premium: true, free: true },
-        { name: 'Invisibility', premium: true, free: true },
-        { name: 'Multi-language Support', premium: true, free: true },
+        {
+            name: 'Invisibility',
+            premium: <span>Yes, <span className="text-red-400">incompatible with latest version of Zoom</span></span>,
+            free: <span>Yes, <span className="text-green-400">works with Latest Versions of All Softwares</span></span>
+        },
+        {
+            name: 'Multi-language Support',
+            premium: false,
+            free: <span>Yes, <span className="text-green-400">in future updates</span></span>
+        },
         { name: 'Time/Space Complexity Analysis', premium: true, free: true },
         { name: 'Window Management', premium: true, free: true },
         { name: 'Auth System', premium: 'Required', free: 'None (Simplified)' },
-        { name: 'Payment Processing', premium: 'Required', free: 'None (Use your own API key)' },
         { name: 'Privacy', premium: 'Server-processed', free: '100% Local Processing' },
-        { name: 'Customization', premium: 'Limited', free: 'Full Source Code Access' },
         { name: 'Model Selection', premium: 'Limited', free: 'OpenAI, Gemini, Anthropic models' },
     ];
 
@@ -23,7 +29,7 @@ const ComparisonSection: React.FC = () => {
             <div className="container mx-auto px-4">
                 <AnimatedSection className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        <span className="text-accent">Compare</span> with Paid Alternatives
+                        <span className="text-accent">Compare</span> with Alternatives
                     </h2>
                     <p className="text-text-muted text-lg max-w-2xl mx-auto">
                         See how Spectro stacks up against premium interview preparation tools that cost $60+ per month.
@@ -82,7 +88,7 @@ const ComparisonSection: React.FC = () => {
                             for what you use with your own API key.
                         </p>
                         <div className="inline-flex items-center gap-2 bg-accent/20 px-3 py-1.5 rounded-full text-accent font-semibold">
-                            <span className="text-sm">Free alternative to $60/month services</span>
+                            <span className="text-sm">Cheap alternative to $60/month services</span>
                         </div>
                     </div>
                 </AnimatedSection>

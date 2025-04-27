@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FaGithub, FaTwitter, FaDiscord, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-
-    const socialLinks = [
-        { id: 'github', icon: <FaGithub className="w-5 h-5" />, url: 'https://github.com/greeneu/interview-coder-withoupaywall-opensource', label: 'GitHub' },
-        { id: 'twitter', icon: <FaTwitter className="w-5 h-5" />, url: 'https://twitter.com', label: 'Twitter' },
-        { id: 'discord', icon: <FaDiscord className="w-5 h-5" />, url: 'https://discord.gg', label: 'Discord' },
-        { id: 'linkedin', icon: <FaLinkedin className="w-5 h-5" />, url: 'https://linkedin.com', label: 'LinkedIn' },
-    ];
 
     const mainLinks = [
         { id: 'features', label: 'Features', url: '#features' },
@@ -19,12 +11,6 @@ const Footer: React.FC = () => {
         { id: 'pricing', label: 'Pricing', url: '#pricing' },
         { id: 'faq', label: 'FAQ', url: '#faq' },
         { id: 'blog', label: 'Blog', url: '#blog' },
-    ];
-
-    const legalLinks = [
-        { id: 'privacy', label: 'Privacy Policy', url: '#privacy' },
-        { id: 'terms', label: 'Terms of Service', url: '#terms' },
-        { id: 'license', label: 'License', url: '#license' },
     ];
 
     return (
@@ -63,7 +49,7 @@ const Footer: React.FC = () => {
 
             {/* Main footer content */}
             <div className="container mx-auto px-4 py-16 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {/* Logo and about section */}
                     <div className="space-y-6">
                         <motion.div
@@ -94,56 +80,6 @@ const Footer: React.FC = () => {
                         >
                             Revolutionizing technical interviews with AI-powered assistance and real-time code solutions. Open source and free forever.
                         </motion.p>
-
-                        {/* Social links */}
-                        <motion.div
-                            className="flex space-x-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >
-                            {socialLinks.map((social) => (
-                                <motion.a
-                                    key={social.id}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-full bg-primary-light/30 flex items-center justify-center text-text-muted hover:text-white relative group"
-                                    onMouseEnter={() => setHoveredLink(social.id)}
-                                    onMouseLeave={() => setHoveredLink(null)}
-                                    whileHover={{ scale: 1.1, y: -5 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    aria-label={social.label}
-                                >
-                                    {social.icon}
-
-                                    {/* Hover glow effect */}
-                                    <motion.div
-                                        className="absolute inset-0 rounded-full"
-                                        initial={{ boxShadow: "0 0 0 rgba(0, 174, 255, 0)" }}
-                                        animate={{
-                                            boxShadow: hoveredLink === social.id
-                                                ? "0 0 15px rgba(0, 174, 255, 0.5)"
-                                                : "0 0 0 rgba(0, 174, 255, 0)"
-                                        }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-
-                                    {/* Tooltip */}
-                                    <motion.span
-                                        className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-text py-1 px-2 rounded-md bg-primary-light/70 whitespace-nowrap"
-                                        initial={{ opacity: 0, y: -10 }}
-                                        animate={{
-                                            opacity: hoveredLink === social.id ? 1 : 0,
-                                            y: hoveredLink === social.id ? 0 : -10
-                                        }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        {social.label}
-                                    </motion.span>
-                                </motion.a>
-                            ))}
-                        </motion.div>
                     </div>
 
                     {/* Main links */}
@@ -161,39 +97,6 @@ const Footer: React.FC = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                                >
-                                    <Link
-                                        href={link.url}
-                                        className="text-text-muted hover:text-cyber-blue relative group flex items-center"
-                                    >
-                                        <motion.span
-                                            className="w-0 h-[1px] bg-cyber-blue absolute -left-5 group-hover:w-4 transition-all duration-300"
-                                        />
-                                        {link.label}
-                                        <motion.span
-                                            className="w-0 h-[1px] bg-cyber-blue absolute -bottom-1 left-0 group-hover:w-full transition-all duration-300"
-                                        />
-                                    </Link>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
-                    {/* Legal links */}
-                    <motion.div
-                        className="space-y-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <h3 className="text-lg font-semibold text-white">Legal</h3>
-                        <ul className="space-y-3">
-                            {legalLinks.map((link, index) => (
-                                <motion.li
-                                    key={link.id}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
                                 >
                                     <Link
                                         href={link.url}

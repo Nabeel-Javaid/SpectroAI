@@ -5,6 +5,11 @@ import { FaWindows, FaApple } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const DownloadSection: React.FC = () => {
+    // Dummy function that does nothing
+    const handleDisabledClick = () => {
+        // Do nothing for disabled buttons
+    };
+
     return (
         <section id="download" className="py-20 relative">
             <div className="absolute inset-0 hero-gradient opacity-30 -z-10"></div>
@@ -17,6 +22,11 @@ const DownloadSection: React.FC = () => {
                     <p className="text-text-muted text-lg max-w-2xl mx-auto">
                         Get started with Spectro today. It's free, open-source, and runs on your local machine.
                     </p>
+                    <div className="mt-4">
+                        <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium">
+                            Coming Soon!
+                        </span>
+                    </div>
                 </AnimatedSection>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -30,10 +40,10 @@ const DownloadSection: React.FC = () => {
                                 Download the Windows installer for the easiest setup experience.
                             </p>
                             <Button
-                                href="https://github.com/greeneu/interview-coder-withoupaywall-opensource/releases"
-                                className="w-full justify-center"
+                                className="w-full justify-center opacity-60 cursor-not-allowed"
+                                onClick={handleDisabledClick}
                             >
-                                Download for Windows
+                                Coming Soon
                             </Button>
                         </div>
                     </AnimatedSection>
@@ -48,10 +58,10 @@ const DownloadSection: React.FC = () => {
                                 Download the macOS DMG file for both Intel and Apple Silicon Macs.
                             </p>
                             <Button
-                                href="https://github.com/greeneu/interview-coder-withoupaywall-opensource/releases"
-                                className="w-full justify-center"
+                                className="w-full justify-center opacity-60 cursor-not-allowed"
+                                onClick={handleDisabledClick}
                             >
-                                Download for macOS
+                                Coming Soon
                             </Button>
                         </div>
                     </AnimatedSection>

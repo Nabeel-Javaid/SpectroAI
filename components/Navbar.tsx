@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
             }
 
             // Update active section based on scroll position
-            const sections = ['features', 'how-it-works', 'comparison', 'download'];
+            const sections = ['features', 'how-it-works', 'comparison'];
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -97,20 +97,11 @@ const Navbar: React.FC = () => {
                         <NavLink href="#features" isActive={activePage === 'features'}>Features</NavLink>
                         <NavLink href="#how-it-works" isActive={activePage === 'how-it-works'}>How It Works</NavLink>
                         <NavLink href="#comparison" isActive={activePage === 'comparison'}>Comparison</NavLink>
-                        <NavLink href="#download" isActive={activePage === 'download'}>Download</NavLink>
                     </div>
 
                     {/* Action Buttons */}
                     <div className="hidden md:flex items-center space-x-3">
-                        <Button
-                            variant="neon"
-                            size="sm"
-                            href="#download"
-                            icon={<FaDownload />}
-                            glitch={true}
-                        >
-                            Download
-                        </Button>
+                        {/* Download button removed */}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -140,17 +131,9 @@ const Navbar: React.FC = () => {
                             <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>Features</MobileNavLink>
                             <MobileNavLink href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</MobileNavLink>
                             <MobileNavLink href="#comparison" onClick={() => setMobileMenuOpen(false)}>Comparison</MobileNavLink>
-                            <MobileNavLink href="#download" onClick={() => setMobileMenuOpen(false)}>Download</MobileNavLink>
 
                             <div className="pt-6 flex flex-col gap-4 w-full max-w-xs">
-                                <Button
-                                    variant="neon"
-                                    href="#download"
-                                    icon={<FaDownload />}
-                                    glitch={true}
-                                >
-                                    Download Now
-                                </Button>
+                                {/* Download button removed */}
                             </div>
                         </div>
                     </motion.div>
