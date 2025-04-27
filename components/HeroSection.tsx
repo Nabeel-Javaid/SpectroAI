@@ -462,6 +462,7 @@ def prepare_for_interview():
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
                             variants={itemVariants}
                         >
+                            {/* Download button removed
                             <Button
                                 variant="neon"
                                 size="lg"
@@ -471,6 +472,7 @@ def prepare_for_interview():
                             >
                                 Download Now
                             </Button>
+                            */}
 
                             {/* <Button
                                 variant="cyberpunk"
