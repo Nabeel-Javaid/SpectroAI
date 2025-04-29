@@ -23,7 +23,7 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
     }, []);
 
     return (
-        <div className={`relative rounded-lg bg-[#0a0e17] p-8 font-mono text-base md:text-lg overflow-hidden shadow-xl ${className}`}>
+        <div className={`relative rounded-lg  p-8 font-mono text-base md:text-lg overflow-hidden shadow-xl ${className}`}>
             {/* Terminal scan line effect */}
             <div className="scan-line absolute inset-0 opacity-5"></div>
 
@@ -38,18 +38,19 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
 
             {/* Code content area */}
             <div className="relative z-10 mb-14">
-                {/* Line numbers */}
-                <div className="absolute left-0 top-0 bottom-0 w-8 text-gray-500 text-sm flex flex-col space-y-10 pt-1">
-                    {/* {[...Array(6)].map((_, i) => (
+                {/* Line numbers (optional, can be uncommented if needed) */}
+                {/* <div className="absolute left-0 top-0 bottom-0 w-8 text-gray-500 text-sm flex flex-col space-y-10 pt-1">
+                    {[...Array(6)].map((_, i) => (
                         <div key={i} className="flex justify-end">{i + 1}</div>
-                    ))} */}
-                </div>
+                    ))}
+                </div> */}
 
                 <div className="pl-10 font-medium">
                     <Typewriter
                         options={{
+                            // The strings array already follows the Comment -> Code pattern
                             strings: [
-                                '<span class="comment">// Initialize Spectro</span>\n\n<span class="code-keyword">const</span> <span class="code-variable">Spectro</span> = <span class="code-keyword">new</span> <span class="code-function">AIAssistant</span>();\n\n<span class="comment">// Take screenshot</span>\n<span class="code-keyword">const</span> <span class="code-variable">problem</span> = <span class="code-keyword">await</span> <span class="code-variable">Spectro</span>.<span class="code-function">captureScreen</span>();\n\n<span class="comment">// Process with AI</span>\n<span class="code-keyword">const</span> <span class="code-variable">solution</span> = <span class="code-keyword">await</span> <span class="code-variable">Spectro</span>.<span class="code-function">analyze</span>(<span class="code-variable">problem</span>);',
+                                '<span class="comment">// Initialize Spectro</span>\n<span class="code-keyword">const</span> <span class="code-variable">Spectro</span> = <span class="code-keyword">new</span> <span class="code-function">AIAssistant</span>();\n<span class="comment">// Take screenshot</span>\n<span class="code-keyword">const</span> <span class="code-variable">problem</span> = <span class="code-keyword">await</span> <span class="code-variable">Spectro</span>.<span class="code-function">captureScreen</span>();\n<span class="comment">// Process with AI</span>\n<span class="code-keyword">const</span> <span class="code-variable">solution</span> = <span class="code-keyword">await</span> <span class="code-variable">Spectro</span>.<span class="code-function">analyze</span>(<span class="code-variable"></span>);',
                             ],
                             autoStart: true,
                             loop: true,
@@ -68,47 +69,60 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
             <div className="absolute bottom-4 left-4 right-4 bg-black/50 text-cyber-blue text-sm px-4 py-3 rounded-md border border-cyber-blue/30 font-mono">
                 <div className="flex items-center space-x-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-neo-green animate-pulse"></span>
-
                     <span className="text-neo-green">SYSTEM_ACTIVE</span>
                 </div>
                 <div className="mt-1 text-[#a8d0fc]">INTERFACE_VERSION: 2.3.7</div>
                 <div className="mt-1 text-[#a8d0fc]">STATUS: ONLINE</div>
             </div>
 
-            {/* Pulsing cursor */}
+            {/* Global styles for typewriter and code elements */}
             <style jsx global>{`
                 .cyber-cursor {
-                    color: #00ccff;
-                    animation: blink 1s infinite;
+                    color: #00ccff; /* Cursor color */
+                    animation: blink 1s infinite; /* Blinking animation */
                 }
-                
+
                 .code-text {
-                    font-weight: 500;
-                    line-height: 2.5;
+                    font-weight: 500; /* Medium font weight for code */
+                    line-height: 2.5; /* Increased line spacing */
+                    white-space: pre-wrap; /* Ensures newlines are respected */
                 }
-                
+
                 .comment {
-                    color: #7d9c7d;
-                    font-style: italic;
+                    color: #7d9c7d; /* Greenish color for comments */
+                    font-style: italic; /* Italicize comments */
                 }
-                
+
                 .code-keyword {
-                    color: #c77dff;
-                    font-weight: 600;
+                    color: #c77dff; /* Purple color for keywords (const, new, await) */
+                    font-weight: 600; /* Slightly bolder */
                 }
-                
+
                 .code-variable {
-                    color: #00ccff;
+                    color: #00ccff; /* Cyan color for variables (Spectro, problem, solution) */
                 }
-                
+
                 .code-function {
-                    color: #00ff9d;
-                    font-weight: 600;
+                    color: #00ff9d; /* Bright green color for function/class names */
+                    font-weight: 600; /* Slightly bolder */
                 }
-                
+
+                /* Blinking animation keyframes */
                 @keyframes blink {
                     0%, 100% { opacity: 1; }
                     50% { opacity: 0; }
+                }
+
+                /* Scan line effect (optional visual enhancement) */
+                .scan-line {
+                    background: linear-gradient(to bottom, transparent 50%, rgba(0, 204, 255, 0.1) 50%);
+                    background-size: 100% 4px;
+                    animation: scan 4s linear infinite;
+                }
+
+                @keyframes scan {
+                    0% { background-position: 0 0; }
+                    100% { background-position: 0 100%; }
                 }
             `}</style>
 
@@ -126,4 +140,4 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
     );
 };
 
-export default CodeAnimation; 
+export default CodeAnimation;
