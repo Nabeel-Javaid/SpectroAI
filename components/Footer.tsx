@@ -53,22 +53,11 @@ const Footer: React.FC = () => {
                     {/* Logo and about section */}
                     <div className="space-y-6">
                         <motion.div
-                            className="flex items-center space-x-2"
+                            className="flex items-center"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <div className="relative w-10 h-10">
-                                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyber-blue to-cyber-purple"></div>
-                                <div className="absolute inset-[2px] rounded-md bg-primary-dark flex items-center justify-center">
-                                    <span className="text-xl font-bold text-white">IC</span>
-                                </div>
-                                <motion.div
-                                    className="absolute -inset-1 rounded-lg bg-gradient-to-br from-cyber-blue to-cyber-purple opacity-30 blur-md"
-                                    animate={{ opacity: [0.2, 0.5, 0.2] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                />
-                            </div>
                             <span className="text-xl font-bold text-white">Spectro AI</span>
                         </motion.div>
 
