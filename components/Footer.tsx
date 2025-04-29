@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                                     transition={{ duration: 2, repeat: Infinity }}
                                 />
                             </div>
-                            <span className="text-xl font-bold text-white">Spectro</span>
+                            <span className="text-xl font-bold text-white">Spectro AI</span>
                         </motion.div>
 
                         <motion.p
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            &copy; {new Date().getFullYear()} Spectro. All rights reserved.
+                            &copy; {new Date().getFullYear()} Spectro AI. All rights reserved.
                         </motion.p>
 
                         <motion.div

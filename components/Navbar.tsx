@@ -61,16 +61,7 @@ const Navbar: React.FC = () => {
                             }}
                             transition={{ duration: 2, repeat: Infinity }}
                         >
-                            Spectro
-                        </motion.span>
-                        <motion.span
-                            className="text-white font-bold text-xl"
-                            animate={{
-                                textShadow: ['0 0 5px rgba(255, 255, 255, 0.1)', '0 0 8px rgba(255, 255, 255, 0.3)', '0 0 5px rgba(255, 255, 255, 0.1)'],
-                            }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                        >
-                            Ai
+                            Spectro AI
                         </motion.span>
 
                         {/* Decorative circuit line underneath logo */}
