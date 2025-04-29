@@ -23,7 +23,7 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
     }, []);
 
     return (
-        <div className={`relative rounded-lg  p-8 font-mono text-base md:text-lg overflow-hidden shadow-xl ${className}`}>
+        <div className={`relative rounded-lg p-8 font-mono text-base md:text-lg overflow-hidden shadow-xl ${className}`} style={{ minHeight: '650px' }}>
             {/* Terminal scan line effect */}
             <div className="scan-line absolute inset-0 opacity-5"></div>
 
@@ -38,13 +38,6 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
 
             {/* Code content area */}
             <div className="relative z-10 mb-14">
-                {/* Line numbers (optional, can be uncommented if needed) */}
-                {/* <div className="absolute left-0 top-0 bottom-0 w-8 text-gray-500 text-sm flex flex-col space-y-10 pt-1">
-                    {[...Array(6)].map((_, i) => (
-                        <div key={i} className="flex justify-end">{i + 1}</div>
-                    ))}
-                </div> */}
-
                 <div className="pl-10 font-medium">
                     <Typewriter
                         options={{
@@ -63,9 +56,17 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
                 </div>
             </div>
 
-            {/* System status display */}
-            <br />
-
+            {/* System status display 1 - original position */}
+            <div className="absolute bottom-24 left-4 right-4 bg-black/50 text-cyber-blue text-sm px-4 py-3 rounded-md border border-cyber-blue/30 font-mono">
+                <div className="flex items-center space-x-2">
+                    <span className="inline-block h-2 w-2 rounded-full bg-neo-green animate-pulse"></span>
+                    <span className="text-neo-green">SYSTEM_ACTIVE</span>
+                </div>
+                <div className="mt-1 text-[#a8d0fc]">INTERFACE_VERSION: 2.3.7</div>
+                <div className="mt-1 text-[#a8d0fc]">STATUS: ONLINE</div>
+            </div>
+            
+            {/* System status display 2 - at the bottom */}
             <div className="absolute bottom-4 left-4 right-4 bg-black/50 text-cyber-blue text-sm px-4 py-3 rounded-md border border-cyber-blue/30 font-mono">
                 <div className="flex items-center space-x-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-neo-green animate-pulse"></span>
@@ -129,6 +130,9 @@ const CodeAnimation: React.FC<CodeAnimationProps> = ({ className = '' }) => {
             {/* Decorated corners - only top ones */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyber-blue/70"></div>
             <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyber-blue/70"></div>
+            {/* Added bottom corners for visual balance */}
+            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-cyber-blue/70"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-cyber-blue/70"></div>
 
             {/* Status indicators */}
             <motion.div
