@@ -54,33 +54,28 @@ const Navbar: React.FC = () => {
                         className="flex items-center space-x-1 relative"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <motion.span
-                            className="text-cyber-blue font-bold text-xl cyberpunk-blue neon-text"
-                            animate={{
-                                textShadow: ['0 0 5px rgba(0, 255, 255, 0.5)', '0 0 10px rgba(0, 255, 255, 0.8)', '0 0 5px rgba(0, 255, 255, 0.5)'],
-                            }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                        >
-                            Spectro AI
-                        </motion.span>
+                        <span className="font-bold text-xl">
+                            {"SpectroAI".split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={index >= 7 ? "" : "text-white"}
+                                    style={index >= 7 ? { color: "#9d4edd" } : {}}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </span>
 
-                        {/* Decorative circuit line underneath logo */}
-                        <motion.div
-                            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-transparent via-cyber-blue to-transparent w-full"
-                            animate={{
-                                opacity: [0.3, 0.7, 0.3],
-                                width: ['80%', '100%', '80%'],
-                            }}
-                            transition={{ duration: 4, repeat: Infinity }}
+                        {/* Decorative circuit line underneath logo - removed animation */}
+                        <div
+                            className="absolute -bottom-1 left-0 h-[2px] bg-cyber-blue/50 w-full"
                         />
 
                         {/* Version number */}
-                        <motion.div
+                        <div
                             className="absolute -top-1 -right-6 text-[10px] text-cyber-purple opacity-70"
-                            animate={{ opacity: [0.5, 0.8, 0.5] }}
-                            transition={{ duration: 3, repeat: Infinity }}
                         >
-                        </motion.div>
+                        </div>
                     </motion.div>
 
                     {/* Desktop Nav Links */}
@@ -155,12 +150,6 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children, isActive = false }) =
                 className={`absolute -bottom-1 left-0 h-[2px] bg-cyber-blue ${isActive ? 'w-full' : 'w-0'} group-hover:w-full transition-all duration-300`}
                 layoutId="navbar-underline"
                 transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-            />
-
-            {/* Glow effect on hover */}
-            <motion.div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"
-                style={{ boxShadow: '0 0 8px rgba(0, 255, 255, 0.3)' }}
             />
         </motion.a>
     );

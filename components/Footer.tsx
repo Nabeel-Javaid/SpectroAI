@@ -58,7 +58,16 @@ const Footer: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className="text-xl font-bold text-white">Spectro AI</span>
+                            <span className="text-xl font-bold text-white">
+                                {"SpectroAI".split("").map((char, index) => (
+                                    <span
+                                        key={index}
+                                        className={index >= 7 ? "text-cyber-purple" : ""}
+                                    >
+                                        {char}
+                                    </span>
+                                ))}
+                            </span>
                         </motion.div>
 
                         <motion.p
@@ -114,7 +123,16 @@ const Footer: React.FC = () => {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            &copy; {new Date().getFullYear()} Spectro AI. All rights reserved.
+                            &copy; {new Date().getFullYear()}
+                            {"SpectroAI".split("").map((char, index) => (
+                                <span
+                                    key={index}
+                                    className={index >= 7 ? "text-cyber-purple" : ""}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                            . All rights reserved.
                         </motion.p>
 
                         <motion.div

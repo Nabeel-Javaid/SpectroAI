@@ -142,7 +142,7 @@ const HowItWorksSection: React.FC = () => {
                     <motion.h2
                         className="text-3xl md:text-4xl font-bold mb-2 relative inline-block"
                     >
-                        <span className="text-cyber-purple neon-text">How It</span>{' '}
+                        <span className="text-cyber-pink">How It</span>{' '}
                         <span className="text-white">Works</span>
                     </motion.h2>
 

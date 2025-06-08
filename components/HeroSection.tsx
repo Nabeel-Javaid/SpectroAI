@@ -332,7 +332,7 @@ def prepare_for_interview():
         }
     };
 
-    const titleChars = "Spectro AI".split("");
+    const titleChars = "SpectroAI".split("");
 
     return (
         <motion.section
@@ -413,7 +413,7 @@ def prepare_for_interview():
                                     {titleChars.map((char, index) => (
                                         <motion.span
                                             key={index}
-                                            className={char === " " ? "mr-3" : "relative inline-block"}
+                                            className={`${char === " " ? "mr-3" : "relative inline-block"} ${index >= 7 ? "text-cyber-purple" : ""}`}
                                             initial={{ y: 40, opacity: 0 }}
                                             animate={{ y: 0, opacity: 1 }}
                                             transition={{
@@ -427,7 +427,7 @@ def prepare_for_interview():
                                                 <motion.span
                                                     className="absolute inset-0 z-10"
                                                     style={{
-                                                        color: textColor,
+                                                        color: index >= 7 ? "#9d4edd" : textColor,
                                                         mixBlendMode: "color-dodge",
                                                         opacity: 0.7
                                                     }}
