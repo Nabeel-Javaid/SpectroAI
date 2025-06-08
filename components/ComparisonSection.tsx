@@ -42,8 +42,8 @@ const ComparisonSection: React.FC = () => {
                             <thead className="bg-primary text-white border-b border-white/10">
                                 <tr>
                                     <th className="py-4 px-6">Feature</th>
-                                    <th className="py-4 px-6">Premium Tools (Paid)</th>
-                                    <th className="py-4 px-6 bg-accent/10">Spectro (Free)</th>
+                                    <th className="py-4 px-6">Premium Tools </th>
+                                    <th className="py-4 px-6 bg-accent/10">Spectro</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/10">

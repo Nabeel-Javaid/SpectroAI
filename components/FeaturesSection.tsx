@@ -74,15 +74,6 @@ const features: Feature[] = [
         borderClass: 'border-cyber-teal/40',
         glowColor: 'rgba(0, 220, 180, 0.3)'
     },
-    {
-        id: 'opensource',
-        title: 'Open Source',
-        description: 'Completely free and open-source under AGPL-3.0. Fork, modify, and contribute on GitHub.',
-        icon: <FaGithub className="w-6 h-6" />,
-        bgClass: 'from-cyber-orange/20 to-transparent',
-        borderClass: 'border-cyber-orange/40',
-        glowColor: 'rgba(255, 120, 0, 0.3)'
-    },
 ];
 
 // React.memo for feature card component
